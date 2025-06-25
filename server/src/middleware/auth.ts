@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import User from '../models/User';
+import { config } from '../config/processEnv';
 
 interface AuthRequest extends Request {
   user?: any;
@@ -20,7 +21,7 @@ export const auth = async (
         .json({ message: 'No token, authorization denied' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as any;
+    const decoded = jwt.verify(token, config.JWT.SECRET!) as any;
     const user = await User.findById(decoded.userId).select('-password');
 
     if (!user) {

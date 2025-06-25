@@ -1,10 +1,9 @@
 import mongoose from 'mongoose';
+import { config } from './processEnv';
 
 export const connectDB = async (): Promise<void> => {
   try {
-    const mongoURI =
-      process.env.MONGODB_URI || 'mongodb://localhost:27017/scheduler';
-
+    const mongoURI = config.MONGO.URL;
     await mongoose.connect(mongoURI);
 
     console.log('MongoDB connected successfully');
