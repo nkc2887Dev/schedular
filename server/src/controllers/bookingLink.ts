@@ -24,7 +24,7 @@ export const generateLink = async (req: Request | any, res: Response) => {
       message: 'Booking link created successfully',
       bookingLink: {
         ...bookingLink.toObject(),
-        fullUrl: `${req.protocol}://${req.get('host')}/book/${linkId}`,
+        fullUrl: `${req.protocol}://localhost:5173/book/${linkId}`,
       },
     });
   } catch (error) {
@@ -45,7 +45,7 @@ export const getUserLinks = async (req: Request | any, res: Response) => {
     // Add full URLs to each booking link
     const linksWithUrls = bookingLinks.map(link => ({
       ...link.toObject(),
-      fullUrl: `${req.protocol}://${req.get('host')}/book/${link.linkId}`,
+      fullUrl: `${req.protocol}://localhost:5173/book/${link.linkId}`,
     }));
 
     res.json({ bookingLinks: linksWithUrls });
@@ -71,7 +71,7 @@ export const geLink = async (req: Request, res: Response) => {
     res.json({
       bookingLink: {
         ...bookingLink.toObject(),
-        fullUrl: `${req.protocol}://${req.get('host')}/book/${linkId}`,
+        fullUrl: `${req.protocol}://localhost:5173/book/${linkId}`,
       },
     });
   } catch (error) {

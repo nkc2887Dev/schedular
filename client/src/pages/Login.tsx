@@ -18,7 +18,7 @@ const Login: React.FC = () => {
       await login(email, password);
       navigate('/dashboard');
     } catch (error) {
-      // Error is handled in the auth context
+      console.error(error)
     } finally {
       setLoading(false);
     }
