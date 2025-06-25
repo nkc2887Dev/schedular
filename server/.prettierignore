@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Package files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment files
+.env*
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploads
+uploads/
+
+# PM2
+.pm2/
+
+# TypeScript build info
+*.tsbuildinfo 
