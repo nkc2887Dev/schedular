@@ -16,29 +16,13 @@ A modern, lightweight scheduling system similar to Calendly, built with React + 
 - **Time Slot Selection**: Pick from available 30-minute time slots
 - **Booking Confirmation**: Complete booking with contact details
 
-## Tech Stack
-
-### Frontend
-- React 19 with TypeScript
-- React Router for navigation
-- Axios for API calls
-- React DatePicker for date selection
-- React Hot Toast for notifications
-- Vite for build tooling
-
-### Backend
-- Node.js with Express
-- TypeScript
-- MongoDB with Mongoose
-- JWT for authentication
-- bcryptjs for password hashing
-- Express validation for input validation
-
-## Prerequisites
-
-- Node.js (v16 or higher)
-- MongoDB (local or cloud instance)
-- npm or yarn
+### Public Booking Link Flow
+- **Valid Links**: Visitors can open a generated booking link to view available slots.
+- **Invalid Links**: Any attempt to open a link that hasn't been generated or is inactive will result in a 404 "Not Found" error.
+- **Calendar View**: The booking page displays a calendar for selecting a future available date.
+- **Time Slot Bubbles**: Upon selecting a date, visitors see a list of available time slots, styled as bubbles or chips, based on the user's defined availability.
+- **Booking a Slot**: Visitors can select a time slot and click "Book" to confirm their appointment.
+- **Real-time Availability**: Once a time slot is booked, it will no longer appear as available for that specific booking link, preventing double bookings. Other booking links remain unaffected.
 
 ## Setup Instructions
 
@@ -171,57 +155,3 @@ npm run dev      # Start development server
 npm run build    # Build for production
 npm run preview  # Preview production build
 ```
-
-## Features Implemented
-
-✅ User authentication (register/login)  
-✅ JWT-based authentication  
-✅ Availability slot management  
-✅ Booking link generation  
-✅ Public booking interface  
-✅ Date and time selection  
-✅ Conflict-free booking system  
-✅ Responsive design  
-✅ Form validation (client & server)  
-✅ Error handling and user feedback  
-✅ Modern UI/UX design  
-
-## Security Features
-
-- Password hashing with bcryptjs
-- JWT token authentication
-- Input validation and sanitization
-- CORS configuration
-- Rate limiting
-- Helmet.js security headers
-
-## Performance Considerations
-
-- Database indexing for efficient queries
-- Optimized API responses
-- Client-side state management
-- Lazy loading of components
-- Efficient date/time handling
-
-## Future Enhancements
-
-- Email notifications
-- Calendar integration
-- Recurring availability
-- Booking cancellation
-- Admin dashboard
-- Analytics and reporting
-- Multi-language support
-- Mobile app
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License. 
